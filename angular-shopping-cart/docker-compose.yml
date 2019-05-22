@@ -1,0 +1,10 @@
+version: '2.1'
+
+services:
+  angular-shopping-cart:
+    image: angular-shopping-cart
+    build: .
+    environment:
+      NODE_ENV: production
+    ports:
+      - 8082:80

@@ -1,0 +1,38 @@
+/* $listgroup
+ ------------------------------------------*/
+mat-list, mat-nav-list {
+  mat-list-item, a[mat-list-item] {
+    color: rgba(mat-color($foreground, base), 0.87);
+  }
+}
+mat-list-item, .mat-list-item {
+  mat-icon {
+    &[mat-list-avatar] {
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+      align-content: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      display: flex;
+    }
+  }
+}
+mat-divider {
+  border-top: 1px solid mat-color($foreground, divider)!important;
+}
+mat-list mat-list-item [mat-list-avatar], mat-list a[mat-list-item] [mat-list-avatar], mat-nav-list mat-list-item [mat-list-avatar], mat-nav-list a[mat-list-item] [mat-list-avatar] {
+  min-width: 40px;
+}
+mat-list-item.active > .mat-list-item-content {
+  background: mat-color($background, 'hover');
+}
+mat-list mat-list-item .mat-list-item-content,
+mat-list a[mat-list-item] .mat-list-item-content,
+mat-nav-list mat-list-item .mat-list-item-content,
+mat-nav-list a[mat-list-item] .mat-list-item-content{
+  font-size: $font-size-base!important;
+}

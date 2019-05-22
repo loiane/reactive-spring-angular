@@ -1,0 +1,15 @@
+version: '2.1'
+
+services:
+  spring-shopping-cart:
+    image: spring-shopping-cart
+    build: .
+    networks:
+    - network1
+    environment:
+      PORT: 8080
+    ports:
+    - 8080:8080
+
+networks:
+  network1:
