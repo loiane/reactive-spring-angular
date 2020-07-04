@@ -12,8 +12,8 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$angular-shopping-cart-primary: mat-palette($mat-indigo);
-$angular-shopping-cart-accent: mat-palette($mat-pink, A200, A100, A400);
+$angular-shopping-cart-primary: mat-palette($mat-cyan, 800, 800);
+$angular-shopping-cart-accent: mat-palette($mat-teal, 400);
 
 // The warn palette is optional (defaults to red).
 $angular-shopping-cart-warn: mat-palette($mat-red);
@@ -36,4 +36,8 @@ $angular-shopping-cart-theme: mat-light-theme((
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  font-family: Roboto;
+  margin: 0px;
+  padding: 0px;
+}
