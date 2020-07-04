@@ -6,8 +6,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styles: [
-  ]
+  styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
 
