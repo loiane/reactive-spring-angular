@@ -1,4 +1,4 @@
-FROM maven:3.5.4-jdk-10-slim
+FROM maven:3.6.3-jdk-14
 WORKDIR /usr/src/java-code
 COPY . /usr/src/java-code/
 RUN mvn package

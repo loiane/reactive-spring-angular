@@ -1,4 +1,4 @@
-FROM openjdk:10-jre-slim
+FROM openjdk:14-alpine
 COPY ./target/spring-shopping-cart-1.0-SNAPSHOT.jar /usr/src/app/
 WORKDIR /usr/src/app
 EXPOSE 8080

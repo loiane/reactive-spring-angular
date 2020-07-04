@@ -12,7 +12,7 @@ import reactor.core.publisher.Mono;
 @RequestMapping("/api/products")
 public class ProductController {
 
-    private ProductRepository repository;
+    private final ProductRepository repository;
 
     public ProductController(ProductRepository repository) {
         this.repository = repository;
@@ -26,7 +26,7 @@ public class ProductController {
     @GetMapping("{id}")
     public Mono<ResponseEntity<Product>> getById(@PathVariable String id) {
         return repository.findById(id)
-                .map(product -> ResponseEntity.ok(product))
+                .map(ResponseEntity::ok)
                 .defaultIfEmpty(ResponseEntity.notFound().build());
     }
 
@@ -37,14 +37,14 @@ public class ProductController {
     }
 
     @PutMapping("{id}")
-    public Mono<ResponseEntity<Product>> update(@PathVariable(value = "id") String id,
-                                                       @RequestBody Product product) {
+    public Mono<ResponseEntity<Product>> update(@PathVariable String id,
+                                                @RequestBody Product product) {
         return repository.findById(id)
                 .flatMap(existingProduct -> {
                     existingProduct.setName(product.getName());
                     return repository.save(existingProduct);
                 })
-                .map(updateProduct -> ResponseEntity.ok(updateProduct))
+                .map(ResponseEntity::ok)
                 .defaultIfEmpty(ResponseEntity.notFound().build());
     }
 
