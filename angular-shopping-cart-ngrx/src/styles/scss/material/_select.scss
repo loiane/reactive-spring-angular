@@ -1,0 +1,11 @@
+body {
+  .mat-select-panel {
+    background-color: mat-color($background, card);
+  }
+  .mat-select-trigger, .mat-option {
+    font-size: $font-size-base;
+  }
+  .app-dark .mat-select-panel {
+    background-color: mat-color($dark-background, card);
+  }
+}

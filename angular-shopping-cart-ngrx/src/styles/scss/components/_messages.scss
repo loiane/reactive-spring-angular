@@ -1,0 +1,55 @@
+@import "../material.variables";
+@import "../mixins/bi-app/bi-app-ltr";
+@import "../app.variables";
+@import "../mixins";
+:host {
+  .mat-sidenav {
+    position: absolute!important;
+    width: 200px;
+  }
+  .mat-drawer-content {
+    padding: 0;
+  }
+  @media (min-width: 959px) {
+    .mat-drawer-side {
+      background-color: transparent;
+      box-shadow: none!important;
+    }
+  }
+  .message-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+  }
+  mat-expansion-panel:not(.mat-expanded) {
+    .show-on-open {
+      display: none;
+    }
+  }
+  .mat-expanded .hide-on-open {
+    display: none;
+  }
+  .mat-expansion-panel {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 1px 1px rgba(0, 0, 0, 0.05) !important;
+  }
+  .mat-expansion-panel-header {
+    height: auto!important;
+    min-height: 65px!important;
+  }
+  .messages-nav {
+    mat-icon {
+      margin-right: 16px;
+    }
+  }
+}
+
+[dir="rtl"] :host ::ng-deep {
+  .side-panel-opened > .mat-drawer-content {
+    margin-left: 0!important;
+    margin-right: 200px!important;
+  }
+  .messages-nav mat-icon {
+    margin-right: 0;
+    margin-left: 16px;
+  }
+}

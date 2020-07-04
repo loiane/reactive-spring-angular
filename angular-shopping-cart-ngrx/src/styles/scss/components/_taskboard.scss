@@ -1,0 +1,103 @@
+@import "../material.variables";
+@import "../mixins/bi-app/bi-app-ltr";
+@import "../app.variables";
+@import "../mixins";
+
+.taskboard {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding: $spacer;
+  .taskboard-wrapper {
+    width: 280px;
+    padding-right: ($spacer / 2);
+    padding-left: ($spacer / 2);
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+  .taskboard-list {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    white-space: normal;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: $border-radius-base;
+  }
+  .taskboard-header {
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    letter-spacing: 0.02rem;
+    padding: ($spacer/2);
+    margin: 0;
+  }
+  .taskboard-task {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    @include mat-elevation(1);
+    color: rgba(mat-color($foreground, base), 0.87);
+    background: mat-color($background, card);
+    border-radius: $border-radius-base;
+    padding: $gutter;
+    margin-bottom: ($spacer/2);
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:hover {
+      cursor: grab;
+    }
+  }
+  .taskboard-task::after {
+    content: "";
+    position: absolute;
+    border: 4px solid transparent;
+    top: 0;
+    border-top-width: 12px;
+    border-bottom-color: transparent;
+    right: 6px;
+  }
+  .taskboard-task.task-status-success::after {
+    border-top-color: map-get($mat-green, A700);
+    border-right-color: map-get($mat-green, A700);
+    border-left-color: map-get($mat-green, A700);
+  }
+  .taskboard-task.task-status-info::after {
+    border-top-color: map-get($mat-light-blue, A700);
+    border-right-color: map-get($mat-light-blue, A700);
+    border-left-color: map-get($mat-light-blue, A700);
+  }
+  .taskboard-task.task-status-warning::after {
+    border-top-color: map-get($mat-yellow, A700);
+    border-right-color: map-get($mat-yellow, A700);
+    border-left-color: map-get($mat-yellow, A700);
+  }
+  .taskboard-task.task-status-danger::after {
+    border-top-color: map-get($mat-red, A700);
+    border-right-color: map-get($mat-red, A700);
+    border-left-color: map-get($mat-red, A700);
+  }
+  .taskboard-cards {
+    padding: 0 ($spacer/2) ($spacer/2);
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .taskboard-task-title {
+    margin-bottom: ($spacer/2);
+  }
+}
+
+[dir=rtl] :host .taskboard .taskboard-task::after {
+  right: auto;
+  left: 6px;
+}

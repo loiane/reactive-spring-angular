@@ -1,0 +1,34 @@
+/* $typography
+ ------------------------------------------*/
+a {
+  text-decoration: none;
+  color: inherit;
+  @include hover-focus {
+    cursor: pointer;
+    text-decoration: none;
+    outline: 0;
+  }
+}
+
+button {
+  outline: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+hr {
+  margin-top: 0;
+  margin-bottom: 0;
+  border: 0;
+  border-top: 1px solid mat-color($foreground, divider);
+}
+
+strong, b {
+	font-weight: 700;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}

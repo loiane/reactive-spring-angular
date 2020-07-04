@@ -1,0 +1,40 @@
+$mat-fab-size: 56px !default;
+$mat-fab-padding: 16px !default;
+
+[mat-raised-button], [mat-fab], [mat-mini-fab], [mat-button], [mat-icon-button] {
+  border-radius: $border-radius-base;
+  font-weight: $font-weight-base;
+  &[mat-button-sm] {
+    font-size: 13px;
+    line-height: 30px;
+    padding: 0 8px;
+  }
+}
+
+[mat-icon-button] {
+  &[mat-button-sm] {
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    mat-icon {
+      font-size: 20px;
+      line-height: 20px;
+    }
+  }
+}
+
+@mixin mat-fab-position($spot, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+  [mat-fab].mat-fab-#{$spot} {
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    position: fixed;
+  }
+}
+
+$mat-fab-pos-offset: ($mat-fab-size - $mat-fab-padding) / 2;
+@include mat-fab-position(bottom-right, auto, $mat-fab-pos-offset, 1rem, auto);
+@include mat-fab-position(bottom-left, auto, auto, -25px, $mat-fab-pos-offset);
+@include mat-fab-position(top-right, $mat-fab-pos-offset, $mat-fab-pos-offset, auto, auto);
+@include mat-fab-position(top-left, $mat-fab-pos-offset, auto, auto, $mat-fab-pos-offset);

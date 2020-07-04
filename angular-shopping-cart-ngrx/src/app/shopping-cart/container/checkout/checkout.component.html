@@ -1,0 +1,17 @@
+<h2 class="example-h2" style="text-align: center; padding-top: 15px">Order Status</h2>
+<div class="timeline" [ngClass]="{'stacked': false}" style="padding-top: 75px;">
+  <div class="timeline-card" *ngFor="let item of messages" >
+    <div class="timeline-icon mat-{{ item.color }}"></div>
+    <section class="timeline-content">
+      <mat-card>
+        <mat-card-content>
+          <p>{{ item.description }}</p>
+        </mat-card-content>
+      </mat-card>
+      <div class="timeline-date">{{ item.date | date: 'mediumTime' }}</div>
+    </section>
+  </div>
+  <div class="timeline-card">
+    <div class="timeline-icon mat-grey"></div>
+  </div>
+</div>
