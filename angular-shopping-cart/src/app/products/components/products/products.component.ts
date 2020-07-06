@@ -1,3 +1,4 @@
+import { ShoppingCartService } from './../../../shopping-cart/shopping-cart.service';
 import { ProductService } from './../../services/product.service';
 import { Product } from './../../models/product';
 import { Component, OnInit } from '@angular/core';
@@ -12,7 +13,7 @@ export class ProductsComponent implements OnInit {
 
   products$: Observable<Product[]>;
 
-  constructor(private service: ProductService) {
+  constructor(private service: ProductService, private cartService: ShoppingCartService) {
     this.products$ = this.service.load();
   }
 
@@ -20,6 +21,6 @@ export class ProductsComponent implements OnInit {
   }
 
   addProductCart(product: Product): void {
-    // this.service.dispatchAddToCart(product);
+    this.cartService.addProduct();
   }
 }

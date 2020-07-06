@@ -40,11 +40,7 @@ $spacer:   1rem !default;
   text-align: center;
   overflow: hidden;
   figure {
-    position: relative;
-    text-align: center;
     cursor: pointer;
-    background: rgba(0,0,0,.38);
-    text-align: left;
     border-radius: $border-radius-base $border-radius-base 0 0;
     text-align: center;
   }
@@ -86,6 +82,11 @@ $spacer:   1rem !default;
     }
   }
 
+  figure img {
+    opacity: 0.85;
+    transition: opacity $transition-duration, transform $transition-duration;
+  }
+
   figure figcaption {
     color: #fff;
     text-transform: uppercase;
@@ -125,65 +126,6 @@ $spacer:   1rem !default;
     white-space: nowrap;
     font-size: 0;
     opacity: 0;
-  }
-
-  figure p {
-    margin: 0;
-  }
-
-  figure p {
-    float: right;
-    clear: both;
-    text-align: center;
-    text-transform: none;
-    font-size: 1rem;
-    width: 45px;
-    padding-top: 1rem;
-  }
-
-  figure img,
-  figure p a {
-    transition: opacity $transition-duration, transform $transition-duration;
-  }
-
-  figure img {
-    opacity: 0.85;
-  }
-
-  figure p a {
-    display: block;
-    margin-bottom: $spacer;
-    color: #fff;
-    opacity: 0;
-    transform: translate3d(90px,0,0);
-  }
-
-  figure:hover figcaption::before {
-    transform: translate3d(0,0,0);
-  }
-
-  figure:hover p a {
-    transform: translate3d(0,0,0);
-  }
-
-  figure:hover p a {
-    opacity: 1;
-  }
-
-  figure:hover p a:first-child {
-    transition-delay: 0.025s;
-  }
-
-  figure:hover p a:nth-child(2) {
-    transition-delay: 0.05s;
-  }
-
-  figure:hover p a:nth-child(3) {
-    transition-delay: 0.075s;
-  }
-
-  figure:hover p a:nth-child(4) {
-    transition-delay: 0.1s;
   }
 }
 

@@ -1,43 +1,68 @@
+@import "styles/material.variables";
+@import "styles/_app.variables";
+@import "styles/_cards";
+@import "styles/checkout.component";
 
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
-@import '~@angular/material/theming';
-// Plus imports for other components in your app.
-
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
-@include mat-core();
-
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$angular-shopping-cart-primary: mat-palette($mat-cyan, 800, 800);
-$angular-shopping-cart-accent: mat-palette($mat-teal, 400);
-
-// The warn palette is optional (defaults to red).
-$angular-shopping-cart-warn: mat-palette($mat-red);
-
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
-$angular-shopping-cart-theme: mat-light-theme((
-  color: (
-    primary: $angular-shopping-cart-primary,
-    accent: $angular-shopping-cart-accent,
-    warn: $angular-shopping-cart-warn,
-  )
-));
-
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-@include angular-material-theme($angular-shopping-cart-theme);
-
-/* You can add global styles to this file, and also import other style files */
-
-html, body { height: 100%; }
+html, body {
+  height: 100%;
+}
 body {
   font-family: Roboto;
   margin: 0px;
   padding: 0px;
+}
+
+.pa-1 {
+  padding: 1rem 1rem !important;
+}
+
+.ma-0 {
+  margin: 0 0 !important;
+}
+
+.text-sm { font-size: 70% !important; }
+.text-md { font-size: 80% !important; }
+.text-xl { font-size: 120% !important; }
+.mat-text-muted {
+  color: rgba(0, 0, 0, 0.54) !important;
+}
+.mat-text-primary {
+  color: #673AB7 !important;
+}
+
+mat-toolbar {
+  .notification-label {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 13px;
+    border-radius: 50%;
+    width: 13px;
+    height: 13px;
+    background-color: #f44336;
+    border: 4px solid #f44336;
+    color: white;
+    text-align: center;
+  }
+  &.main-header {
+    padding: 0 8px;
+    position: relative;
+    box-shadow: 0 1px 8px rgba(0,0,0,.3);
+    z-index: 9;
+    .branding {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      margin: auto 0;
+      line-height: 50px;
+      padding: 0 64px 0 16px;
+    }
+  }
 }
