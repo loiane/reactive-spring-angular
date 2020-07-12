@@ -7,4 +7,4 @@ services:
     environment:
       NODE_ENV: production
     ports:
-      - 8082:80
+      - 8081:80

@@ -13,5 +13,5 @@ VOLUME /var/cache/nginx
 COPY --from=angular-client /app/dist/angular-shopping-cart /usr/share/nginx/html
 COPY ./config/nginx.conf /etc/nginx/conf.d/default.conf
 
-# docker build -t nginx-angular -f Dockerfile .
-# docker run -p 8080:80 nginx-angular
+# docker build -t angular-shopping-cart -f Dockerfile .
+# docker run -p 8081:80 angular-shopping-cart
