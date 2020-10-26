@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-SpringShoppingCartApplication<spring-shopping-cart>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.loiane.springshoppingcart.SpringShoppingCartApplication",
+            "projectName": "spring-shopping-cart",
+            "args": ""
+        }
+    ]
+}
